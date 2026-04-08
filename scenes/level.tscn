@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ddx677jva2udr"]
+
+[ext_resource type="PackedScene" uid="uid://bs106843prrpc" path="res://scenes/entities/player/player.tscn" id="1_2q6dc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
+sky_top_color = Color(0.14819023, 0.49169874, 0.46262103, 1)
+sky_horizon_color = Color(0.85510284, 0.97061086, 0.96175015, 1)
+ground_bottom_color = Color(0.3633218, 0.48184526, 0.47548038, 1)
+ground_horizon_color = Color(0.85510284, 0.97061086, 0.96175015, 1)
+
+[sub_resource type="Sky" id="Sky_2q6dc"]
+sky_material = SubResource("ProceduralSkyMaterial_rd3vj")
+
+[sub_resource type="Environment" id="Environment_w7c3h"]
+background_mode = 2
+sky = SubResource("Sky_2q6dc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q6dc"]
+size = Vector3(50, 0.5, 50)
+
+[node name="Level" type="Node3D" unique_id=1775208473]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1233757187]
+environment = SubResource("Environment_w7c3h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=479786564]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=512693051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.898529)
+
+[node name="Entities" type="Node3D" parent="." unique_id=1968868085]
+
+[node name="Player" parent="Entities" unique_id=1149987577 instance=ExtResource("1_2q6dc")]
+
+[node name="Environment" type="Node3D" parent="." unique_id=198671347]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment" unique_id=74363349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25319445, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/StaticBody3D" unique_id=1230032028]
+size = Vector3(50, 0.5, 50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D" unique_id=1455199000]
+shape = SubResource("BoxShape3D_2q6dc")

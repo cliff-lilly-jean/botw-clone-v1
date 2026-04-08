@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="botw-clone-v1"
+run/main_scene="uid://ddx677jva2udr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
