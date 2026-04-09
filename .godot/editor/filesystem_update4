@@ -1,5 +1,2 @@
-res://scenes/entities/player/player.tscn
-res://scenes/level.tscn
-res://scenes/entities/player/player.gd
 res://scenes/entities/player/camera_controller.tscn
 res://scenes/entities/player/camera_controller.gd
