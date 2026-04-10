@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_from_vector(event.relative * 0.05)
+		rotate_from_vector(event.relative * 0.005)
 		
 
 func rotate_from_vector(v: Vector2) -> void:
