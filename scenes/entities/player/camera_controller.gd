@@ -20,8 +20,8 @@ func rotate_from_vector(v: Vector2) -> void:
 	if v.length() == 0 : return
 	
 	# rotate horizontally along the y axis
-	rotation.y += v.x
+	rotation.y -= v.x
 	
 	# rotate vertically along the x axis and clamp the rotation
-	rotation.x += v.y
+	rotation.x -= v.y
 	rotation.x = clampf(rotation.x, -0.8, 0.1)
