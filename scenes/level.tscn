@@ -20,6 +20,9 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_2q6dc"]
 size = Vector3(50, 0.5, 50)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7c3h"]
+size = Vector3(10, 10, 1)
+
 [node name="Level" type="Node3D" unique_id=1775208473]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1233757187]
@@ -44,3 +47,12 @@ size = Vector3(50, 0.5, 50)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D" unique_id=1455199000]
 shape = SubResource("BoxShape3D_2q6dc")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Environment" unique_id=128276032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.6479588)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/StaticBody3D2" unique_id=30416359]
+size = Vector3(10, 10, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D2" unique_id=5300058]
+shape = SubResource("BoxShape3D_w7c3h")

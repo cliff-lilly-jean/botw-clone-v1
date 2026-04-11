@@ -1,7 +1,10 @@
 extends Node3D
 
+@export var min_limit_x : float
+@export var max_limit_x : float
 @export var horizontal_acceleration : float = 2.0
 @export var vertical_acceleration : float = 1.0
+@export var mouse_acceleration: float = 0.005
 
 func _process(delta: float) -> void:
 	
@@ -13,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_from_vector(event.relative * 0.005)
+		rotate_from_vector(event.relative * mouse_acceleration)
 		
 
 func rotate_from_vector(v: Vector2) -> void:
@@ -24,4 +27,4 @@ func rotate_from_vector(v: Vector2) -> void:
 	
 	# rotate vertically along the x axis and clamp the rotation
 	rotation.x -= v.y
-	rotation.x = clampf(rotation.x, -0.8, 0.1)
+	rotation.x = clampf(rotation.x, min_limit_x, max_limit_x)
