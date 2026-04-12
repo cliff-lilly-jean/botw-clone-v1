@@ -16,12 +16,26 @@ extends CharacterBody3D
 var movement_input : Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	movement_input = Input.get_vector("left", "right", "forward", "backward").rotated(-camera.global_rotation.y)
-	velocity = Vector3(movement_input.x, 0, movement_input.y) * base_speed
 	
+	move(delta)
 	jump(delta)
 	
 	move_and_slide()
+	
+func move(delta: float) -> void:
+	movement_input = Input.get_vector("left", "right", "forward", "backward").rotated(-camera.global_rotation.y)
+	var velocity_2d = Vector2(velocity.x, velocity.z)
+	
+	if movement_input != Vector2.ZERO:
+		velocity_2d += movement_input * base_speed * delta
+		velocity_2d = velocity_2d.limit_length(base_speed)
+		velocity.x = velocity_2d.x
+		velocity.z = velocity_2d.y
+	else:
+		velocity_2d = velocity_2d.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
+		velocity.x = velocity_2d.x
+		velocity.z = velocity_2d.y
+	
 	
 func jump(delta: float) -> void:
 	if is_on_floor():
