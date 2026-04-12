@@ -9,12 +9,14 @@ extends CharacterBody3D
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_decent * jump_time_to_decent)) * -1.0
 
+# movment
 @export var base_speed : float = 4.0
 @export var run_speed :  float = 6.0
+var movement_input : Vector2 = Vector2.ZERO
 
+# camera
 @onready var camera = $CameraController/Camera3D
 
-var movement_input : Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	
@@ -22,11 +24,15 @@ func _physics_process(delta: float) -> void:
 	jump(delta)
 	
 	move_and_slide()
-	
+
+# movement logic	
 func move(delta: float) -> void:
+	
+	# get the input direction and convert it to a velocity
 	movement_input = Input.get_vector("left", "right", "forward", "backward").rotated(-camera.global_rotation.y)
 	var current_velocity = Vector2(velocity.x, velocity.z)
 	
+	# determine what to do if there is or isn't movement
 	if movement_input != Vector2.ZERO:
 		current_velocity += movement_input * base_speed * delta
 		current_velocity = current_velocity.limit_length(base_speed)
@@ -37,10 +43,14 @@ func move(delta: float) -> void:
 		velocity.x = current_velocity.x
 		velocity.z = current_velocity.y
 	
-	
+# jump logic
 func jump(delta: float) -> void:
+	
+	# determine if able to jump
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
+			
+	# apply gravity
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta
