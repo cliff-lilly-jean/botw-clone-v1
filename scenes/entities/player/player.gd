@@ -24,17 +24,17 @@ func _physics_process(delta: float) -> void:
 	
 func move(delta: float) -> void:
 	movement_input = Input.get_vector("left", "right", "forward", "backward").rotated(-camera.global_rotation.y)
-	var velocity_2d = Vector2(velocity.x, velocity.z)
+	var current_velocity = Vector2(velocity.x, velocity.z)
 	
 	if movement_input != Vector2.ZERO:
-		velocity_2d += movement_input * base_speed * delta
-		velocity_2d = velocity_2d.limit_length(base_speed)
-		velocity.x = velocity_2d.x
-		velocity.z = velocity_2d.y
+		current_velocity += movement_input * base_speed * delta
+		current_velocity = current_velocity.limit_length(base_speed)
+		velocity.x = current_velocity.x
+		velocity.z = current_velocity.y
 	else:
-		velocity_2d = velocity_2d.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
-		velocity.x = velocity_2d.x
-		velocity.z = velocity_2d.y
+		current_velocity = current_velocity.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
+		velocity.x = current_velocity.x
+		velocity.z = current_velocity.y
 	
 	
 func jump(delta: float) -> void:
