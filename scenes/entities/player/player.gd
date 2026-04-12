@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_decent * jump_time_to_decent)) * -1.0
 
 @export var base_speed : float = 4.0
+@export var run_speed :  float = 6.0
 
 @onready var camera = $CameraController/Camera3D
 
