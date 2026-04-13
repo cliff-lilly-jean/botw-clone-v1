@@ -26,27 +26,25 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-# movement logic	
+# movement logic			
 func move(delta: float) -> void:
-	
 	# get the input direction and convert it to a velocity
 	movement_input = Input.get_vector("left", "right", "forward", "backward").rotated(-camera.global_rotation.y)
+	
 	var current_velocity = Vector2(velocity.x, velocity.z)
 	var is_running = Input.is_action_pressed("run")
+	var speed = run_speed if is_running else base_speed
+	
+	var target_velocity = movement_input * speed
 	
 	# determine what to do if there is or isn't movement
 	if movement_input != Vector2.ZERO:
-		
-		var speed = run_speed if is_running else base_speed
-		
-		current_velocity += movement_input * speed * delta
-		current_velocity = current_velocity.limit_length(speed)
-		velocity.x = current_velocity.x
-		velocity.z = current_velocity.y
+		current_velocity = current_velocity.move_toward(target_velocity, 20.0 * delta)
 	else:
-		current_velocity = current_velocity.move_toward(Vector2.ZERO, base_speed * 4.0  * delta)
-		velocity.x = current_velocity.x
-		velocity.z = current_velocity.y
+		current_velocity = current_velocity.move_toward(Vector2.ZERO, 24.0 * delta)
+	
+	velocity.x = current_velocity.x
+	velocity.z = current_velocity.y
 
 	
 # jump logic
