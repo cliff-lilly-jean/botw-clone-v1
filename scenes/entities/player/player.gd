@@ -41,7 +41,7 @@ func move(delta: float) -> void:
 	if movement_input != Vector2.ZERO:
 		current_velocity = current_velocity.move_toward(target_velocity, 20.0 * delta)
 	else:
-		current_velocity = current_velocity.move_toward(Vector2.ZERO, 24.0 * delta)
+		current_velocity = current_velocity.move_toward(Vector2.ZERO, 40.0 * delta)
 	
 	velocity.x = current_velocity.x
 	velocity.z = current_velocity.y
