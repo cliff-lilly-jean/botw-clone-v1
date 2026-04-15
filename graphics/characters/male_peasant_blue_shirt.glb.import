@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5ejodqmwthlo"
-path="res://.godot/imported/male_peasant_white_shirt.glb-219ec2f94cf21bf2138f3bffa5742879.scn"
+uid="uid://djj63guebk4tn"
+path="res://.godot/imported/male_peasant_blue_shirt.glb-75ef0465996da6e06aa04a61d0a1a8e2.scn"
 
 [deps]
 
-source_file="res://graphics/characters/male_peasant_white_shirt.glb"
-dest_files=["res://.godot/imported/male_peasant_white_shirt.glb-219ec2f94cf21bf2138f3bffa5742879.scn"]
+source_file="res://graphics/characters/male_peasant_blue_shirt.glb"
+dest_files=["res://.godot/imported/male_peasant_blue_shirt.glb-75ef0465996da6e06aa04a61d0a1a8e2.scn"]
 
 [params]
 
