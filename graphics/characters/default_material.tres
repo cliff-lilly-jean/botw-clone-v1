@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cspav4m76xr5h"]
+
+[ext_resource type="Texture2D" uid="uid://djmnvo17fbfe7" path="res://graphics/characters/male_peasant_white_shirt_Polygon_Fantasy_Characters_Texture_04_C.png" id="1_p4re5"]
+
+[resource]
+albedo_texture = ExtResource("1_p4re5")

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5ejodqmwthlo"
+uid="uid://dkkmcgao6i3ey"
 path="res://.godot/imported/male_peasant_white_shirt.glb-219ec2f94cf21bf2138f3bffa5742879.scn"
 
 [deps]
@@ -37,6 +37,21 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Alt1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://graphics/characters/default_material.tres",
+"use_external/path": "uid://cspav4m76xr5h"
+}
+},
+"nodes": {
+"PATH:Root/Skeleton3D": {
+"retarget/bone_map": Object(BoneMap,"resource_local_to_scene":false,"resource_name":"","profile":Object(SkeletonProfileHumanoid,"resource_local_to_scene":false,"resource_name":"","root_bone":&"Root","scale_base_bone":&"Hips","group_size":4,"bone_size":56,"script":null)
+,"bonemap":null,"bone_map/Root":&"","bone_map/Hips":&"Pelvis","bone_map/Spine":&"spine_01","bone_map/Chest":&"spine_02","bone_map/UpperChest":&"spine_03","bone_map/Neck":&"neck_01","bone_map/Head":&"head","bone_map/LeftEye":&"","bone_map/RightEye":&"","bone_map/Jaw":&"","bone_map/LeftShoulder":&"clavicle_l","bone_map/LeftUpperArm":&"UpperArm_L","bone_map/LeftLowerArm":&"lowerarm_l","bone_map/LeftHand":&"Hand_L","bone_map/LeftThumbMetacarpal":&"thumb_01_l","bone_map/LeftThumbProximal":&"thumb_02_l","bone_map/LeftThumbDistal":&"thumb_03_l","bone_map/LeftIndexProximal":&"indexFinger_02_l","bone_map/LeftIndexIntermediate":&"indexFinger_03_l","bone_map/LeftIndexDistal":&"indexFinger_04_l","bone_map/LeftMiddleProximal":&"","bone_map/LeftMiddleIntermediate":&"","bone_map/LeftMiddleDistal":&"","bone_map/LeftRingProximal":&"","bone_map/LeftRingIntermediate":&"","bone_map/LeftRingDistal":&"","bone_map/LeftLittleProximal":&"","bone_map/LeftLittleIntermediate":&"","bone_map/LeftLittleDistal":&"","bone_map/RightShoulder":&"clavicle_r","bone_map/RightUpperArm":&"UpperArm_R","bone_map/RightLowerArm":&"lowerarm_r","bone_map/RightHand":&"Hand_R","bone_map/RightThumbMetacarpal":&"thumb_01_r","bone_map/RightThumbProximal":&"thumb_02_r","bone_map/RightThumbDistal":&"thumb_03_r","bone_map/RightIndexProximal":&"indexFinger_02_r","bone_map/RightIndexIntermediate":&"indexFinger_03_r","bone_map/RightIndexDistal":&"indexFinger_04_r","bone_map/RightMiddleProximal":&"","bone_map/RightMiddleIntermediate":&"","bone_map/RightMiddleDistal":&"","bone_map/RightRingProximal":&"","bone_map/RightRingIntermediate":&"","bone_map/RightRingDistal":&"","bone_map/RightLittleProximal":&"","bone_map/RightLittleIntermediate":&"","bone_map/RightLittleDistal":&"","bone_map/LeftUpperLeg":&"Thigh_L","bone_map/LeftLowerLeg":&"calf_l","bone_map/LeftFoot":&"Foot_L","bone_map/LeftToes":&"toes_l","bone_map/RightUpperLeg":&"Thigh_R","bone_map/RightLowerLeg":&"calf_r","bone_map/RightFoot":&"Foot_R","bone_map/RightToes":&"toes_r","script":null)
+
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
