@@ -42,7 +42,7 @@ func move(delta: float) -> void:
 		current_velocity = current_velocity.move_toward(target_velocity, 20.0 * delta)
 		$PeasantSkin/AnimationPlayer.current_animation = "standard_animations-1/Sprint"
 		var target_angle = -movement_input.angle() + PI/2 # negative the movement angle multiplied by PI/2 to get the correct rotation based off camera rotation
-		$PeasantSkin.rotation.y = rotate_toward($PeasantSkin.rotation.y, target_angle, 6.0 * delta)
+		$PeasantSkin.rotation.y = rotate_toward($PeasantSkin.rotation.y, target_angle, 20.0 * delta)
 	else:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, 40.0 * delta)
 		$PeasantSkin/AnimationPlayer.current_animation = "standard_animations-1/Idle"
