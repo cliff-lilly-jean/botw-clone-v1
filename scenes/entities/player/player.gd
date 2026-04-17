@@ -57,6 +57,7 @@ func jump(delta: float) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
+			#$PeasantSkin.set_movement_state("Jump")
 			
 	# apply gravity
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
