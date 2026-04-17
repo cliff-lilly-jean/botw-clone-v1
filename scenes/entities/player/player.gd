@@ -62,7 +62,4 @@ func jump(delta: float) -> void:
 			
 	# apply gravity
 	var gravity = jump_gravity if velocity.y >0.0 else fall_gravity
-		
-	
 	velocity.y -= gravity * delta
-	print(velocity.y)
