@@ -7,6 +7,9 @@
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pgge0"]
 animation = &"standard_animations/Idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ovoe4"]
+animation = &"standard_animations/Jump"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wibp5"]
 animation = &"standard_animations/Sprint"
 
@@ -17,12 +20,22 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ck1ia"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nuyw1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hupx6"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w113y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g1n6q"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ck1ia"]
 states/Idle/node = SubResource("AnimationNodeAnimation_pgge0")
 states/Idle/position = Vector2(322, 102)
+states/Jump/node = SubResource("AnimationNodeAnimation_ovoe4")
+states/Jump/position = Vector2(378, 29)
 states/Sprint/node = SubResource("AnimationNodeAnimation_wibp5")
 states/Sprint/position = Vector2(564, 102)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ovoe4"), "Idle", "Sprint", SubResource("AnimationNodeStateMachineTransition_851wi"), "Sprint", "Idle", SubResource("AnimationNodeStateMachineTransition_ck1ia")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ovoe4"), "Idle", "Sprint", SubResource("AnimationNodeStateMachineTransition_851wi"), "Sprint", "Idle", SubResource("AnimationNodeStateMachineTransition_ck1ia"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_nuyw1"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_hupx6"), "Jump", "Sprint", SubResource("AnimationNodeStateMachineTransition_w113y"), "Sprint", "Jump", SubResource("AnimationNodeStateMachineTransition_g1n6q")]
 
 [node name="PeasantSkin" unique_id=1646635040 instance=ExtResource("1_ktlf7")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
