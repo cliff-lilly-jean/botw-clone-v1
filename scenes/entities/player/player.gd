@@ -14,7 +14,6 @@ extends CharacterBody3D
 @export var run_speed :  float = 20.0
 var movement_input : Vector2 = Vector2.ZERO
 
-
 # camera
 @onready var camera = $CameraController/Camera3D
 
