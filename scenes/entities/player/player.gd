@@ -17,6 +17,7 @@ var movement_input : Vector2 = Vector2.ZERO
 # camera
 @onready var camera = $CameraController/Camera3D
 
+@onready var skin = $PeasantSkin
 
 func _physics_process(delta: float) -> void:
 	
@@ -39,12 +40,12 @@ func move(delta: float) -> void:
 	# determine what to do if there is or isn't movement
 	if movement_input != Vector2.ZERO:
 		current_velocity = current_velocity.move_toward(target_velocity, 40.0 * delta)
-		$PeasantSkin.set_movement_state("Sprint")
+		skin.set_movement_state("Sprint")
 		var target_angle = -movement_input.angle() + PI/2 # negative the movement angle multiplied by PI/2 to get the correct rotation based off camera rotation
-		$PeasantSkin.rotation.y = rotate_toward($PeasantSkin.rotation.y, target_angle, 20.0 * delta)
+		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, 20.0 * delta)
 	else:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, 120.0 * delta)
-		$PeasantSkin.set_movement_state("Idle")
+		skin.set_movement_state("Idle")
 	
 	velocity.x = current_velocity.x
 	velocity.z = current_velocity.y
@@ -58,7 +59,7 @@ func jump(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
 	else:
-		$PeasantSkin.set_movement_state("Jump")
+		skin.set_movement_state("Jump")
 			
 	# apply gravity
 	var gravity = jump_gravity if velocity.y >0.0 else fall_gravity

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ca7ovsl75scqo" path="res://scenes/entities/player/player.gd" id="1_1hmtu"]
 [ext_resource type="PackedScene" uid="uid://dm64vw88jo3n4" path="res://scenes/entities/player/camera_controller.tscn" id="2_635qg"]
-[ext_resource type="PackedScene" uid="uid://c7fn0xheg17ye" path="res://scenes/entities/player/peasant_skin.tscn" id="3_58kc7"]
+[ext_resource type="PackedScene" uid="uid://ca5x1qos81rdn" path="res://scenes/entities/player/peasant_skin.tscn" id="3_58kc7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1hmtu"]
 
