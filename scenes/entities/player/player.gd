@@ -12,6 +12,7 @@ extends CharacterBody3D
 # movment
 @export var base_speed : float = 6.0
 @export var run_speed :  float = 20.0
+@export var target_velocity_multiplier : float = 120.0
 var movement_input : Vector2 = Vector2.ZERO
 
 # camera
@@ -39,12 +40,13 @@ func move(delta: float) -> void:
 	
 	# determine what to do if there is or isn't movement
 	if movement_input != Vector2.ZERO:
-		current_velocity = current_velocity.move_toward(target_velocity, 40.0 * delta)
+		current_velocity = current_velocity.move_toward(target_velocity, target_velocity_multiplier * delta)
 		skin.set_movement_state("Sprint")
+		
 		var target_angle = -movement_input.angle() + PI/2 # negative the movement angle multiplied by PI/2 to get the correct rotation based off camera rotation
 		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, 20.0 * delta)
 	else:
-		current_velocity = current_velocity.move_toward(Vector2.ZERO, 120.0 * delta)
+		current_velocity = current_velocity.move_toward(Vector2.ZERO, target_velocity_multiplier * delta)
 		skin.set_movement_state("Idle")
 	
 	velocity.x = current_velocity.x
