@@ -17,6 +17,7 @@ var movement_input : Vector2 = Vector2.ZERO
 
 # camera
 @onready var camera = $CameraController/Camera3D
+@export var target_angle_multiplier : float  = 20.0
 
 @onready var skin = $PeasantSkin
 
@@ -44,7 +45,7 @@ func move(delta: float) -> void:
 		skin.set_movement_state("Sprint")
 		
 		var target_angle = -movement_input.angle() + PI/2 # negative the movement angle multiplied by PI/2 to get the correct rotation based off camera rotation
-		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, 20.0 * delta)
+		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, target_angle_multiplier * delta)
 	else:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, target_velocity_multiplier * delta)
 		skin.set_movement_state("Idle")

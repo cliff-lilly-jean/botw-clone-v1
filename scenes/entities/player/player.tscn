@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ca5x1qos81rdn" path="res://scenes/entities/player/peasant_skin.tscn" id="3_58kc7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1hmtu"]
+radius = 0.2998047
 
 [node name="Player" type="CharacterBody3D" unique_id=1149987577]
 script = ExtResource("1_1hmtu")
