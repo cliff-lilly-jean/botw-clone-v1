@@ -1,10 +1,14 @@
-extends Node3D
+extends SpringArm3D
 
 @export var min_limit_x : float
 @export var max_limit_x : float
 @export var horizontal_acceleration : float = 2.0
 @export var vertical_acceleration : float = 1.0
 @export var mouse_acceleration: float = 0.005
+@export var spring_arm_length : float = 6.5
+
+func _ready() -> void:
+	spring_length = spring_arm_length
 
 func _process(delta: float) -> void:
 	
