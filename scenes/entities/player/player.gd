@@ -42,7 +42,7 @@ func move(delta: float) -> void:
 	# determine what to do if there is or isn't movement
 	if movement_input != Vector2.ZERO:
 		current_velocity = current_velocity.move_toward(target_velocity, target_velocity_multiplier * delta)
-		skin.set_movement_state("Sprint")
+		skin.set_movement_state("Run")
 		
 		var target_angle = -movement_input.angle() + PI/2 # negative the movement angle multiplied by PI/2 to get the correct rotation based off camera rotation
 		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, target_angle_multiplier * delta)
