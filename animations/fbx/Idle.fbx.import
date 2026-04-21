@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c108o025xspa4"
-path="res://.godot/imported/Standing Melee Attack Downward.fbx-2a468ec45e7f3d9d91e9137053cbc9bc.scn"
+uid="uid://bff3vrcwlrpcr"
+path="res://.godot/imported/Idle.fbx-8cb5cb2505732acb053ae279e2f199a9.scn"
 
 [deps]
 
-source_file="res://animations/Standing Melee Attack Downward.fbx"
-dest_files=["res://.godot/imported/Standing Melee Attack Downward.fbx-2a468ec45e7f3d9d91e9137053cbc9bc.scn"]
+source_file="res://animations/fbx/Idle.fbx"
+dest_files=["res://.godot/imported/Idle.fbx-8cb5cb2505732acb053ae279e2f199a9.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://animations/1h_melee_attack.res",
+"save_to_file/fallback_path": "res://animations/mixamo_com.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://cxhw2t0yx1fkh",
+"save_to_file/path": "uid://xkkcpdhijr48",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-# jump
+@export_group("Jump")
 @export var jump_height : float = 2.25
 @export var jump_time_to_peak : float = 0.4
 @export var jump_time_to_decent : float = 0.3
@@ -9,15 +9,15 @@ extends CharacterBody3D
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_decent * jump_time_to_decent)) * -1.0
 
-# movment
+@export_group("Movement")
 @export var base_speed : float = 6.0
 @export var run_speed :  float = 20.0
 @export var target_velocity_multiplier : float = 120.0
 var movement_input : Vector2 = Vector2.ZERO
 
-# camera
+@export_group("Camera")
 @onready var camera = $CameraController/Camera3D
-@export var target_angle_multiplier : float  = 20.0
+@export var target_angle_multiplier : float  = 5.0
 
 @onready var skin = $PeasantSkin
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cduwmcmxqw8sl"
-path="res://.godot/imported/Running.fbx-232a50c55091078135c6bf3ef89b60ae.scn"
+uid="uid://502dyoukdo3j"
+path="res://.godot/imported/Jumping Up.fbx-aaa9f6706a1dc4224ea88951f6adbd2a.scn"
 
 [deps]
 
-source_file="res://animations/Running.fbx"
-dest_files=["res://.godot/imported/Running.fbx-232a50c55091078135c6bf3ef89b60ae.scn"]
+source_file="res://animations/fbx/Jumping Up.fbx"
+dest_files=["res://.godot/imported/Jumping Up.fbx-aaa9f6706a1dc4224ea88951f6adbd2a.scn"]
 
 [params]
 
@@ -41,10 +41,10 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://animations/run.res",
+"save_to_file/fallback_path": "res://animations/Jump.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://h4auxw1wugut",
-"settings/loop_mode": 1,
+"save_to_file/path": "uid://b7xsehwo8ljfl",
+"settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",

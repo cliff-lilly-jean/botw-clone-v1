@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bff3vrcwlrpcr"
-path="res://.godot/imported/Idle.fbx-4b5b727bc905d5509a3e81fa2a32f696.scn"
+uid="uid://cduwmcmxqw8sl"
+path="res://.godot/imported/Running.fbx-ed296e18e1ce7466bc527fcde04e83ea.scn"
 
 [deps]
 
-source_file="res://animations/Idle.fbx"
-dest_files=["res://.godot/imported/Idle.fbx-4b5b727bc905d5509a3e81fa2a32f696.scn"]
+source_file="res://animations/fbx/Running.fbx"
+dest_files=["res://.godot/imported/Running.fbx-ed296e18e1ce7466bc527fcde04e83ea.scn"]
 
 [params]
 
@@ -41,10 +41,10 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://animations/mixamo_com.res",
+"save_to_file/fallback_path": "res://animations/run.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://xkkcpdhijr48",
-"settings/loop_mode": 0,
+"save_to_file/path": "uid://h4auxw1wugut",
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
