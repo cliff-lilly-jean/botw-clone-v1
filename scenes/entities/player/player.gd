@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	
 	move(delta)
 	jump(delta)
+	ability_logic()
 	
 	move_and_slide()
 
@@ -67,3 +68,8 @@ func jump(delta: float) -> void:
 	# apply gravity
 	var gravity = jump_gravity if velocity.y >0.0 else fall_gravity
 	velocity.y -= gravity * delta
+
+
+func ability_logic() -> void:
+	if Input.is_action_just_pressed("ability"):
+		skin.attack()

@@ -5,6 +5,13 @@
 [ext_resource type="AnimationLibrary" uid="uid://ch7dqaady85cj" path="res://animations/standard_animations.res" id="3_pgge0"]
 [ext_resource type="AnimationLibrary" uid="uid://c0c57yhnc687u" path="res://animations/Global.res" id="3_wibp5"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ck1ia"]
+animation = &"Global/1h_melee_attack"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_nuyw1"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wibp5"]
 animation = &"Global/Idle"
 
@@ -15,36 +22,40 @@ animation = &"Global/Jump"
 animation = &"Global/Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ck1ia"]
-xfade_time = 0.1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yv8s5"]
-xfade_time = 0.1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wibp5"]
-xfade_time = 0.1
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_851wi"]
-xfade_time = 0.1
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nuyw1"]
-xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hupx6"]
-xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w113y"]
-xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ck1ia"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g1n6q"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yv8s5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ls5hy"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qcb2l"]
 states/Idle/node = SubResource("AnimationNodeAnimation_wibp5")
-states/Idle/position = Vector2(338.66, 100)
+states/Idle/position = Vector2(348, 100)
 states/Jump/node = SubResource("AnimationNodeAnimation_ovoe4")
-states/Jump/position = Vector2(442.66, 213.04251)
+states/Jump/position = Vector2(528, 249)
 states/Run/node = SubResource("AnimationNodeAnimation_851wi")
-states/Run/position = Vector2(574.66003, 100)
-transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ck1ia"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_yv8s5"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_wibp5"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_851wi"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_nuyw1"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_hupx6"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_w113y")]
-graph_offset = Vector2(177.66, 49.042503)
+states/Run/position = Vector2(528, 76)
+states/Start/position = Vector2(179, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ck1ia"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_nuyw1"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_hupx6"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_w113y"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_g1n6q"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_yv8s5"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ls5hy")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_42rmv"]
+graph_offset = Vector2(-279.7047, 45.60971)
+nodes/output/position = Vector2(980, 240)
+nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_qcb2l")
+nodes/MoveStateMachine/position = Vector2(-40, 120)
+nodes/AttackOneShot/node = SubResource("AnimationNodeOneShot_nuyw1")
+nodes/AttackOneShot/position = Vector2(520, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ck1ia")
+nodes/Animation/position = Vector2(0, 340)
+node_connections = [&"output", 0, &"AttackOneShot", &"AttackOneShot", 0, &"MoveStateMachine", &"AttackOneShot", 1, &"Animation"]
 
 [node name="PeasantSkin" unique_id=1646635040 instance=ExtResource("1_ktlf7")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
@@ -55,5 +66,8 @@ libraries/Global = ExtResource("3_wibp5")
 libraries/standard_animations = ExtResource("3_pgge0")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=2109465529]
-tree_root = SubResource("AnimationNodeStateMachine_ck1ia")
+tree_root = SubResource("AnimationNodeBlendTree_42rmv")
 anim_player = NodePath("../AnimationPlayer")
+parameters/AttackOneShot/active = false
+parameters/AttackOneShot/internal_active = false
+parameters/AttackOneShot/request = 0
