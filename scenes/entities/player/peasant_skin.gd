@@ -9,5 +9,5 @@ extends Node3D
 func set_movement_state(state : String) -> void:
 	movement_state_machine.travel(state)
 
-func attack():
+func attack() -> void:
 	animation_tree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
