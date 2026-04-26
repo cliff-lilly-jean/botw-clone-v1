@@ -41,8 +41,8 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://animations/1_hand_melee_attack.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/fallback_path": "res://graphics/characters/player/animations/chop.res",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://d4kmmg74nlqje",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
