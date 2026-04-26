@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkkmcgao6i3ey" path="res://graphics/characters/player/male_peasant_white_shirt.glb" id="1_ktlf7"]
 [ext_resource type="Script" uid="uid://dryagjde1xlx" path="res://scenes/entities/player/peasant_skin.gd" id="2_wibp5"]
-[ext_resource type="PackedScene" uid="uid://bvd5usbsb56l1" path="res://graphics/objects/sword/Sword.glb" id="3_ovoe4"]
+[ext_resource type="PackedScene" uid="uid://bvd5usbsb56l1" path="res://graphics/weapons/sword/Sword.glb" id="3_ovoe4"]
 [ext_resource type="AnimationLibrary" uid="uid://ch7dqaady85cj" path="res://animations/standard_animations.res" id="3_pgge0"]
 [ext_resource type="AnimationLibrary" uid="uid://c0c57yhnc687u" path="res://animations/Global.res" id="3_wibp5"]
 
@@ -106,7 +106,7 @@ transform = Transform3D(0.006343007, -0.8296629, 0.5582282, 0.8241396, -0.311828
 bone_name = "RightHand"
 bone_idx = 26
 
-[node name="Sword" parent="Root/GeneralSkeleton/RightHandSlot" index="0" unique_id=105657696 instance=ExtResource("3_ovoe4")]
+[node name="Sword" parent="Root/GeneralSkeleton/RightHandSlot" index="0" unique_id=298141667 instance=ExtResource("3_ovoe4")]
 transform = Transform3D(-0.24871519, 0.60420585, -0.25325546, -0.106089115, 0.15477115, 0.94584405, 0.9692735, 0.17197959, 0.038539495, 0.014120594, 0.13069785, 0.016239077)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1411474126]
