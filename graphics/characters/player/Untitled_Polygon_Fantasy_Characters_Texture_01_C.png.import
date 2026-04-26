@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnlru1vtemao"
-path.s3tc="res://.godot/imported/Sword_Polygon_Fantasy_Characters_Texture_01_C.png-5f3ce77c290e26bb97b292f9614a2873.s3tc.ctex"
+uid="uid://b552y2eco1gre"
+path.s3tc="res://.godot/imported/Untitled_Polygon_Fantasy_Characters_Texture_01_C.png-b58e829d1f2a40f0072aee5dbc2d8fdc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://graphics/objects/Sword_Polygon_Fantasy_Characters_Texture_01_C.png"
-dest_files=["res://.godot/imported/Sword_Polygon_Fantasy_Characters_Texture_01_C.png-5f3ce77c290e26bb97b292f9614a2873.s3tc.ctex"]
+source_file="res://graphics/characters/player/Untitled_Polygon_Fantasy_Characters_Texture_01_C.png"
+dest_files=["res://.godot/imported/Untitled_Polygon_Fantasy_Characters_Texture_01_C.png-b58e829d1f2a40f0072aee5dbc2d8fdc.s3tc.ctex"]
 
 [params]
 

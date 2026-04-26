@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dkkmcgao6i3ey"
-path="res://.godot/imported/male_peasant_white_shirt.glb-219ec2f94cf21bf2138f3bffa5742879.scn"
+path="res://.godot/imported/male_peasant_white_shirt.glb-592a00578783760ffdf4279525152791.scn"
 
 [deps]
 
-source_file="res://graphics/characters/male_peasant_white_shirt.glb"
-dest_files=["res://.godot/imported/male_peasant_white_shirt.glb-219ec2f94cf21bf2138f3bffa5742879.scn"]
+source_file="res://graphics/characters/player/male_peasant_white_shirt.glb"
+dest_files=["res://.godot/imported/male_peasant_white_shirt.glb-592a00578783760ffdf4279525152791.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "Alt1": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://graphics/characters/default_material.tres",
+"use_external/fallback_path": "res://graphics/characters/player/default_material.tres",
 "use_external/path": "uid://cspav4m76xr5h"
 }
 },
