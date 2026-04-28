@@ -6,14 +6,31 @@
 [ext_resource type="AnimationLibrary" uid="uid://ch7dqaady85cj" path="res://animations/standard_animations.res" id="3_pgge0"]
 [ext_resource type="AnimationLibrary" uid="uid://c0c57yhnc687u" path="res://animations/Global.res" id="3_wibp5"]
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_nuyw1"]
+filter_enabled = true
+filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:LeftHand", "%GeneralSkeleton:LeftIndexDistal", "%GeneralSkeleton:LeftIndexIntermediate", "%GeneralSkeleton:LeftIndexProximal", "%GeneralSkeleton:LeftLowerArm", "%GeneralSkeleton:LeftShoulder", "%GeneralSkeleton:LeftThumbDistal", "%GeneralSkeleton:LeftThumbMetacarpal", "%GeneralSkeleton:LeftThumbProximal", "%GeneralSkeleton:LeftUpperArm", "%GeneralSkeleton:Neck", "%GeneralSkeleton:RightHand", "%GeneralSkeleton:RightIndexDistal", "%GeneralSkeleton:RightIndexIntermediate", "%GeneralSkeleton:RightIndexProximal", "%GeneralSkeleton:RightLowerArm", "%GeneralSkeleton:RightShoulder", "%GeneralSkeleton:RightThumbDistal", "%GeneralSkeleton:RightThumbMetacarpal", "%GeneralSkeleton:RightThumbProximal", "%GeneralSkeleton:RightUpperArm", "%GeneralSkeleton:UpperChest", ".", "SecondAttackTimer"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ck1ia"]
 animation = &"Global/1_hand_melee_attack"
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_nuyw1"]
-filter_enabled = true
-filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:LeftHand", "%GeneralSkeleton:LeftIndexDistal", "%GeneralSkeleton:LeftIndexIntermediate", "%GeneralSkeleton:LeftIndexProximal", "%GeneralSkeleton:LeftLowerArm", "%GeneralSkeleton:LeftShoulder", "%GeneralSkeleton:LeftThumbDistal", "%GeneralSkeleton:LeftThumbMetacarpal", "%GeneralSkeleton:LeftThumbProximal", "%GeneralSkeleton:LeftUpperArm", "%GeneralSkeleton:Neck", "%GeneralSkeleton:RightHand", "%GeneralSkeleton:RightIndexDistal", "%GeneralSkeleton:RightIndexIntermediate", "%GeneralSkeleton:RightIndexProximal", "%GeneralSkeleton:RightLowerArm", "%GeneralSkeleton:RightShoulder", "%GeneralSkeleton:RightThumbDistal", "%GeneralSkeleton:RightThumbMetacarpal", "%GeneralSkeleton:RightThumbProximal", "%GeneralSkeleton:RightUpperArm", "%GeneralSkeleton:UpperChest", "."]
-fadein_time = 0.2
-fadeout_time = 0.2
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hupx6"]
+animation = &"Global/slice"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ls5hy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qcb2l"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_42rmv"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_j1aum"]
+states/Chop/node = SubResource("AnimationNodeAnimation_ck1ia")
+states/Chop/position = Vector2(344.5, 94.5)
+states/Slice/node = SubResource("AnimationNodeAnimation_hupx6")
+states/Slice/position = Vector2(356, 193.5)
+transitions = ["Start", "Chop", SubResource("AnimationNodeStateMachineTransition_ls5hy"), "Chop", "Slice", SubResource("AnimationNodeStateMachineTransition_qcb2l"), "Slice", "Chop", SubResource("AnimationNodeStateMachineTransition_42rmv")]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nuyw1"]
 animation = &"standard_animations/Idle"
@@ -48,15 +65,15 @@ transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_h
 graph_offset = Vector2(80, 48)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_42rmv"]
-graph_offset = Vector2(-422.3012, 28.644684)
+graph_offset = Vector2(-296.788, 114.85925)
 nodes/output/position = Vector2(980, 240)
 nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_qcb2l")
 nodes/MoveStateMachine/position = Vector2(-40, 120)
 nodes/AttackOneShot/node = SubResource("AnimationNodeOneShot_nuyw1")
 nodes/AttackOneShot/position = Vector2(520, 160)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_ck1ia")
-nodes/Animation/position = Vector2(-40, 340)
-node_connections = [&"output", 0, &"AttackOneShot", &"AttackOneShot", 0, &"MoveStateMachine", &"AttackOneShot", 1, &"Animation"]
+nodes/AttackStateMachine/node = SubResource("AnimationNodeStateMachine_j1aum")
+nodes/AttackStateMachine/position = Vector2(50, 350)
+node_connections = [&"output", 0, &"AttackOneShot", &"AttackOneShot", 0, &"MoveStateMachine", &"AttackOneShot", 1, &"AttackStateMachine"]
 
 [node name="PeasantSkin" unique_id=416895834 instance=ExtResource("1_ktlf7")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
@@ -80,3 +97,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/AttackOneShot/active = false
 parameters/AttackOneShot/internal_active = false
 parameters/AttackOneShot/request = 0
+
+[node name="SecondAttackTimer" type="Timer" parent="." index="3" unique_id=410052902]
+wait_time = 0.5
+one_shot = true
